@@ -1,0 +1,44 @@
+ !!!!!!!! QUESTION 1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Update without reloading</title>
+</head>
+<body>
+    <p>This is going to be before the update page.</p>
+
+    <div id="yogi">
+        <p>Now this text will get erased and new text will be appended in this p tag .... without reloading the page and just by clicking the button.</p>
+        <button type="button" onclick="ajax_change()">Update</button>
+    </div>    
+
+    <script>
+        
+        function ajax_change(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var myObj=JSON.parse(this.responseText);
+                    document.getElementById("yogi").innerHTML =myObj.name+" "+myObj.surname+" "+myObj.age;
+                    }
+                };
+            xhttp.open("GET", "json_demo.txt", true);
+            xhttp.send();
+        }
+
+    </script>
+
+    <p>This is going to bbe after the update page.</p>
+</body>
+
+<!-- Json File ----------------- 
+
+{
+    "name":"Yogendra",
+    "surname":"Yatnalkar",
+    "age":20,
+    "languages":["English","Hindi","Marathi"]
+}
+
+-->

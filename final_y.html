@@ -1,0 +1,709 @@
+<html>
+    <head>
+        <title>ITSA-CRCE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="http://maps.google.com/maps/api/js?" 
+        type="text/javascript"></script>
+        <link rel="shortcut icon" href="favicon/favicon.png" type="image/x-icon">
+        <link rel="icon" href="favicon/favicon.png" type="image/x-icon">
+    </head>
+    <style>
+        .foot{
+            position:fixed;
+        }
+        .mySlides {display:none}
+        .w3-left, .w3-right, .w3-badge {cursor:pointer}
+        .w3-badge {height:13px;width:13px;padding:0}
+        .lrbuttons
+        {
+            height: 15px;
+            width: 15px;
+            padding: 0;
+        }
+        .scaling-try
+        {
+            max-width:75%;
+            width:100%;
+            max-height:600px;
+        }
+        .teacher-image
+        {
+            max-width:10%; 
+            max-height:10%;
+        }
+        .quote-things
+        {
+            font-size:24px
+        }
+        .quote-author
+        {
+            font-size:15px;
+        }
+        .para-try{
+            max-width: 60%;
+        }
+        .title1{
+            font-size:200%;
+            max-width: 60%;
+        }
+        .title_sp{
+            font-size:200%;
+            max-width: 60%;
+        }
+        #map{
+            width: 60%; height: 65%; padding: 2%;
+        }
+        .map_inside{
+            padding-top:2%;
+            padding-bottom:1.2%;
+        }
+        .t_quote{
+            max-width: 60%;
+        }
+        @media(max-width:420px)  
+        {
+            .scaling-try
+            {
+                max-width: 95%;
+                max-height:50%;
+            }
+            .para-try
+            {
+                max-width: 95%;
+                padding-left:5%;
+                padding-right:5%;
+                font-size:14px;
+            }
+            .teacher-image
+            {
+                max-width:30%;
+                max-height:30%;
+            }
+            .quote-things
+            {
+                max-height:50%;
+                font-size:17px
+            }
+            .quote-author
+            {
+                font-size:11px
+            }
+            .lrbuttons
+            {
+                height:13px;
+                width:13px;
+            }
+            .title1{
+                font-size:150%;
+                max-width: 100%;
+                padding-right:1%;padding-left:1%;padding-top:1%;padding-bottom:1%;
+            }
+            .title_sp{
+                font-size:150%;
+                max-width: 100%;
+                padding-right:1%;padding-left:1%;padding-top:13.5%;padding-bottom:1%;
+            }
+            #map{
+                width: 90%; height: 50%; padding-top: 50px;
+            }
+            .map_inside{
+                padding:2%;
+            }
+            .t_quote{
+                max-width: 95%;
+            }
+        }
+        @media(max-width:350px)  
+        {
+            .title_sp{
+                font-size:150%;
+                max-width: 100%;
+                padding-right:1%;padding-left:1%;padding-top:13.5%;padding-bottom:1%;
+                padding-top:25%;
+            }
+        }
+    </style>
+    <body>
+       <!--Navigation bar for desktop website-->
+        <div class="w3-bar w3-black w3-card" id="home">
+            <a href="#home" class="w3-bar-item w3-button w3-top w3-hover-light-grey"><b>ITSA</b></a><!--image will also work here-->
+            <div class="w3-right">
+                <a href="#Events" class="w3-bar-item w3-button w3-hide-small w3-animate-zoom w3-hover-light-grey">Events</a>
+                <a href="#Team" class="w3-bar-item w3-button w3-hide-small w3-animate-zoom w3-hover-light-grey w3-container" onclick="w3-center; w3-animate-top;">Our Team</a>
+                <a href="#About" class="w3-bar-item w3-button w3-hide-small w3-animate-zoom w3-hover-light-grey">About Us</a>
+                <a href="Backend\Uploads\login.php" target="Blank" class="w3-bar-item w3-button w3-hide-small w3-animate-zoom w3-hover-light-grey">Login</a>
+                <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
+            </div>
+	    </div>
+        <!--Navigation bar for mobile website-->
+            <div id="demo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-animate-top">
+                <a href="#Events" class="w3-bar-item w3-button">Events</a>
+                <a href="#Members" class="w3-bar-item w3-button">Members</a>
+                <a href="#About" class="w3-bar-item w3-button">About Us</a>
+            </div>
+
+            <!--Image Slider------------------------------------------------------>
+        <center>
+        <div class="scaling-try w3-content w3-display-container" style="padding-top:1%; padding-bottom:1%;">
+           <!-- <img class="scaling-try mySlides w3-animate-zoom" src="slimg0.jpg" style="width:100%; height:80%"> -->
+            <img class="scaling-try mySlides w3-animate-top" src="slimg1.jpg" style="width:100%; height: 80%">
+            <img class="scaling-try mySlides w3-animate-top" src="slimg2.jpg" style="width:100%; height: 80%">
+            <img class="scaling-try mySlides w3-animate-top" src="slimg3.jpg" style="width:100%; height: 80%">
+            <div class="scaling-try w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle w3-mobile">
+                <div class="w3-left w3-hover-text-khaki lrbuttons" onclick="plusDivs(-1)">&#10094;</div>
+                <div class="w3-right w3-hover-text-khaki lrbuttons" onclick="plusDivs(1)">&#10095;</div>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-light-grey w3-magenta" onclick="currentDiv(1)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-light-grey w3-magenta" onclick="currentDiv(2)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-light-grey w3-magenta" onclick="currentDiv(3)"></span>
+            </div>
+        </div>
+        </center>
+
+        <!--Events-------------------------------------------------------->
+
+<center>
+        <div class="title1" id="Events">
+            <div style="max-width:60%; padding-bottom:1.8%;padding-top:1.3%; ">
+            <div class=" w3-center w3-round-xxlarge w3-border-black w3-leftbar w3-rightbar w3-border w3-text-black w3-hover-text-red">
+                <b><span class=" w3-round-xxlarge" style="padding-right:1%;padding-left:1%;padding-top:1%;">Event Details
+                </span></b>    
+            </div></div></div>
+        </center>
+
+<!--Past Events ----------------------------------- -->
+
+<style>
+        .eclass{
+                max-width:60%;
+                height:100px;
+        }
+        @media(max-width:420px){
+                .eclass{
+                        max-width:90%;
+                }
+        }
+</style>
+
+<center>
+<div class="w3-container eclass " >
+<div class="w3-border-black w3-bottombar">
+  <div class="w3-bar w3-black">
+    <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'London')">2017-18</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'Paris')">2018-19</button>
+  </div>
+  
+  <div id="London" class="w3-container w3-border city ">
+                <div style="padding-top: 0.50%;  padding-bottom:0.5%;" >
+                        <div class="w3-sand w3-round-xxlarge w3-hover-light-grey" style="padding-top:1%;padding-bottom:1%;width:100%;" align="left">
+                            <a href="Events/event2017.html" target="_blank" title="Click the Link">
+                                <ul class="w3-hover-light-grey">
+                                        <li>Thinking Skill</li>
+                                        <li>Fifa</li>
+                                        <li>House Coding</li>
+                                        <li>Technical Debate</li>
+                                        <li>Aptitude Development Skills</li>
+                                </ul>
+                            </a>
+                        </div>
+                </div>
+      
+  </div>
+
+  <div id="Paris" class="w3-container w3-border city" style="display:none">
+                <div style="padding-top: 0.50%;  padding-bottom:0.5%;">
+                        <div class="w3-sand w3-round-xxlarge w3-hover-light-grey" style="padding-top:1%;padding-bottom:1%;width:100%;" align="left">
+                            <a href="Events/event2017.html" target="_blank" title="Click the Link">
+                                <ul class="w3-hover-light-grey">
+                                        <li>Innovation in Entrepreneurship</li>
+                                        <li>Bootstrap Event1</li>
+                                        <li>Bootstrap Event</li>
+                                        <li>Blur</li>
+                                        <li>IV (With CSI )</li>
+                                </ul>
+                            </a>
+                        </div>
+                </div>
+    </div>
+</div>
+</div>
+</center>
+
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+</script>
+
+<!-- ---------------------------------------------------------------------- -->
+
+        <!--About Section-->
+
+        <center> 
+            <div class="title_sp" id="About">
+                <div style="max-width:60%; padding-bottom:1.5%; padding-top:15%;">
+                <div class=" w3-center w3-round-xxlarge w3-border-black w3-leftbar w3-rightbar w3-border w3-text-black w3-hover-text-red">
+                    <b><span class=" w3-round-xxlarge" style="padding-right:1%;padding-left:1%;padding-top:1%;">About Us
+                    </span></b>    
+                </div></div></div>
+            </center>
+
+         <p  class="para-try w3-display-container w3-content">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ITSA, the sole IT council of Fr. Conceicao Rodrigues College of Engineering, started in the year
+            2011, is known for organising and conducting succesfull workshops and seminars related to Information Technology. They not only increase
+             the knowledge of the students but also keep them updated about new technologies in the market. <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               The council at
+               its crux hopes to assist the department with its core  objective of establishing Information Technology professionals in organizations that are involved
+                in the creation, maintenance, consulting and use of Information Systems with every resource at its disposal.
+        </p>
+
+        <!-- Image for quote-->
+        <center>
+        <img src="Garima_miss.jpg"  class=" teacher-image w3-content w3-display-container w3-hover-opacity">
+        <div class="w3-container" >
+          <div class="w3-panel w3-pale-yellow w3-leftbar t_quote" >
+            <p><i class="fa fa-quote-left w3-xxlarge w3-opacity"></i><br>
+                <i class="quote-things w3-serif">ITSA is a great council which thrives to improve the overall performance of a student. The Department is proud to have such an intra-departmental council which is always ready to complete any assigned task.</i></p>
+            <p align="left" class="quote-author"><i><b>- Prof. Garima Tripathi (HOD IT )</b></i></p>
+            </div>
+        </div>
+        </center>
+        
+ <!--OUR TEAM-->   
+<!------------------------------ OUR TEAM ------------------------------------------->
+
+<style>
+        #team{
+            max-width:75%;
+            transition-duration: 0.6s;
+        }
+        #panel{
+            display:none;
+            transition-duration: 0.6s;
+        }
+        .button{
+            width:40%;
+            font-size: 150%;
+            background-color:white;
+            color:black; 
+            border: 2px solid #f44336;
+            transition-duration: 0.6s;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #f44336;
+            color: white;
+        }
+        .vertical-menu {
+            width: 100%;
+            height: 60%;
+            overflow-y: auto;
+        }
+        .inline-title1{
+            max-width:60%;
+        }
+    @media(max-width:420px){
+        h3{
+            font-size:17.5px;
+        }
+        .button{
+            font-size:18px;
+            width:50%;
+        }
+        .vertical-menu {
+            width: 100%;
+            height: 50%;
+            overflow-y: auto;
+        }
+        h2{
+            font-size: 150%;
+        }
+        .inline-title1{
+            max-width:80%;
+            font-size:100%;
+        }
+    }
+    </style>
+<script>
+        function Function1() {
+            document.getElementById("panel").style.display = "block";
+            document.getElementById("b1").style.display = "none";
+        }
+        function Function2() {
+            document.getElementById("panel").style.display = "none";
+            document.getElementById("b1").style.display = "block";
+        }
+        </script>
+
+<center>
+        <div class="title1" id="Team">
+            <div style="max-width:60%; padding-bottom:1.3%; padding-top:1.5%;">
+            <div class=" w3-center w3-round-xxlarge w3-border-black w3-leftbar w3-rightbar w3-border w3-text-black w3-hover-text-red">
+                <b><span class=" w3-round-xxlarge" style="padding-right:1%;padding-left:1%;padding-top:1%;">Our Team
+                </span></b>    
+            </div></div></div>
+        </center>
+
+<center>
+<div id="team" class="w3-container " align="center">
+    <div class="w3-container  w3-center">
+            <div class="w3-third ">
+                <img src="ti.jpeg" alt="Image Not Available" style="width:30%" class="w3-circle w3-hover-opacity">
+                <h3>Prajakta Dhamanskar</h3>
+                <p>Teacher In-charge</p>
+            </div>
+        
+            <div class="w3-third">
+                <img src="cp.jpg" alt="Image Not Available" style="width:30%; padding-bottom:3%;" class="w3-circle w3-hover-opacity">
+                <h3>Suzanne Tuscano</h3>
+                <p>Chairperson</p>
+            </div>
+
+            <div class="w3-third">
+                <img src="vcp.jpg" alt="Image Not Available" style="width:30%" class="w3-circle w3-hover-opacity">
+                <h3>Tanmay Rane</h3>
+                <p>Vice-Chairperson</p>
+            </div>
+    </div>
+
+<button onclick="Function1()" class="button w3-round-xxlarge"  id="b1">Show All</button>
+
+    <div id="panel" class="vertical-menu w3-border-red w3-topbar w3-bottombar ">
+    <div class="w3-container  w3-center w3-animate-top">
+        <center><div class="inline-title1"><h2 class="w3-black w3-text-white w3-round-xxlarge" ><b>Senior Council</b></h2><br></div></center>
+            <div class="w3-third">
+                <img src="sec.jpeg" alt="Image Not Available" style="width:30%" class="w3-circle w3-hover-opacity">
+                <h3>Anmol Panjwani</h3>
+                <p>Secretary</p>
+            </div>
+        
+            <div class="w3-third">
+                <img src="mkt.jpg" alt="Image Not Available" style="width:30%" class="w3-circle w3-hover-opacity">
+                <h3>Puja Sharma</h3>
+                <p>Marketing Head</p>
+            </div>
+        
+            <div class="w3-third">
+                <img src="prh.jpg" alt="Image Not Available" style="width:30%" class="w3-circle w3-hover-opacity">
+                <h3>Richa Shukla</h3>
+                <p>PR Head</p>
+            </div>
+
+            <div class="w3-third">
+                <img src="eh.jpg" alt="Image Not Available" style="width:30%" class="w3-circle w3-hover-opacity">
+                <h3>Pranali Corriea</h3>
+                <p>Event Head</p>
+            </div>
+        
+            <div class="w3-third">
+                <img src="th.jpg" alt="Image Not Available" style="width:30%" class="w3-circle w3-hover-opacity">
+                <h3>Sojan Chandy</h3>
+                <p>Design & Technical Head</p>
+            </div>
+
+            <div class="w3-third">
+                <img src="th2.jpg" alt="Image Not Available" style="width:30%" class="w3-circle w3-hover-opacity">
+                <h3>Yogendra Yatnalkar</h3>
+                <p>Technical Head</p>
+            </div>
+    </div>
+            
+    <div class="w3-container  w3-center inline-title">
+            <center><div class="inline-title1"><h2 class="w3-black w3-text-white w3-round-xxlarge" ><b>Junior Council</b></h2><br></div></center>
+            <div class="w3-quarter">
+                <img src="ser.jpg" alt="Image Not Available" style="width:40%" class="w3-circle w3-hover-opacity">
+                <h3>Priya Tanwar</h3>
+                <p>SE Representative</p>
+            </div>
+        
+            <div class="w3-quarter">
+                <img src="apr.jpg" alt="Image Not Available" style="width:40%" class="w3-circle w3-hover-opacity">
+                <h3>Rebecca D'souza</h3>
+                <p>Asst. PR Head</p>
+            </div>
+        
+            <div class="w3-quarter">
+                <img src="ath.jpeg" alt="Image Not Available" style="width:40%" class="w3-circle w3-hover-opacity">
+                <h3>Pushpak Chajjed</h3>
+                <p>Asst. Technical Head</p>
+            </div>
+        
+            <div class="w3-quarter">
+                <img src="aeh.jpg" alt="Image Not Available" style="width:40%" class="w3-circle w3-hover-opacity">
+                <h3>Harsh Singhania</h3>
+                <p>Asst.Event Head</p>
+            </div>
+    </div>
+    <div style="padding-bottom:2%;" >
+    <div class="inline-title"></div><button onclick="Function2()" class="button w3-round-xxlarge" style="max-width:200%;" id="b2" >Show Less</button></div></div>
+    </div>
+</center>
+
+<!--MAP --------------------------------------------------------------->
+
+<center>
+<div class="map_inside w3-display-container " >
+<div id="map"  class="w3-round-xlarge w3-display-container">
+        <div class="w3-display-left">Left</div>
+<script type="text/javascript">
+  var locations = [
+    ['Fr.CRCE',19.044401, 72.820664]
+
+  ];
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: new google.maps.LatLng(19.044401, 72.820664),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+
+  var infowindow = new google.maps.InfoWindow();
+
+  var marker, i;
+
+  for (i = 0; i < locations.length; i++) {  
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+      map: map
+    });
+
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+      return function() {
+        infowindow.setContent(locations[i][0]);
+        infowindow.open(map, marker);
+      }
+    })(marker, i));
+  }
+</script></div></div>
+</center>
+
+<!--RSS--------------------------------------------------------------->
+
+<style>
+    .rss{
+        max-width: 60%;
+        max-height: 100%;
+    }
+    @media(max-width:420px){
+        .rss{
+        max-width: 90%;
+        max-height: 100%;
+        font-size:3%;
+    }
+    }
+</style>
+
+<center>
+        <div class="title1">
+            <div style="max-width:60%; padding-bottom:1.3%;  padding-top:1.3%; ">
+            <div class=" w3-center w3-round-xxlarge w3-border-black w3-leftbar w3-rightbar w3-border w3-text-black w3-hover-text-red">
+                <b><span class=" w3-round-xxlarge" style="padding-right:1%;padding-left:1%;padding-top:1%;">News Feed
+                </span></b>    
+            </div></div></div>
+        </center>
+
+<center>
+<div align="center" class="w3-container rss w3-round-xlarge">
+        <div class="w3-round-xlarge">
+<!-- start sw-rss-feed code --> 
+<script type="text/javascript"> 
+rssfeed_url = new Array(); 
+rssfeed_url[0]="https://www.gsmarena.com/rss-news-reviews.php3"; rssfeed_url[1]="https://www.techradar.com/rss/news/software"; rssfeed_url[2]="https://gadgets.ndtv.com/rss/360daily/feeds"; rssfeed_url[3]="https://www.techradar.com/rss"; rssfeed_url[4]="https://gadgets.ndtv.com/rss/feeds";  
+rssfeed_frame_width="100%"; 
+rssfeed_frame_height="500"; 
+rssfeed_scroll="on"; 
+rssfeed_scroll_step="6"; 
+rssfeed_scroll_bar="on"; 
+rssfeed_target="_blank"; 
+rssfeed_font_size="18"; 
+rssfeed_font_face=""; 
+rssfeed_border="on"; 
+rssfeed_title="on"; 
+rssfeed_title_name="Tech. News"; 
+rssfeed_title_bgcolor="purple"; 
+rssfeed_title_color="#fff"; 
+rssfeed_title_bgimage=""; 
+rssfeed_footer="off"; 
+rssfeed_footer_name="rss feed"; 
+rssfeed_footer_bgcolor="#fff"; 
+rssfeed_footer_color="#333"; 
+rssfeed_footer_bgimage=""; 
+rssfeed_item_title_length="50"; 
+rssfeed_item_title_color="#666"; 
+rssfeed_item_bgcolor="#fff"; 
+rssfeed_item_bgimage=""; 
+rssfeed_item_border_bottom="on"; 
+rssfeed_item_source_icon="off"; 
+rssfeed_item_date="on"; 
+rssfeed_item_description="on"; 
+rssfeed_item_description_length="120"; 
+rssfeed_item_description_color="#666"; 
+rssfeed_item_description_link_color="#333"; 
+rssfeed_item_description_tag="off"; 
+rssfeed_no_items="0"; 
+rssfeed_cache = "25ece4752b090beda0c474a77db21c7c"; 
+//--> 
+</script> 
+<script type="text/javascript" src="//feed.surfing-waves.com/js/rss-feed.js"></script> 
+<!-- The link below helps keep this service FREE, and helps other people find the SW widget. Please be cool and keep it! Thanks. --> 
+</div></div></center>
+
+<!---------------------------------------------------------------- -->
+
+<!--Sponsers-->
+
+<center>
+        <div class="title1">
+            <div style="max-width:60%; padding-bottom:0.8%;  padding-top:2%; ">
+            <div class=" w3-center w3-round-xxlarge w3-border-black w3-leftbar w3-rightbar w3-border w3-text-black w3-hover-text-red">
+                <b><span class=" w3-round-xxlarge" style="padding-right:1%;padding-left:1%;padding-top:1%;">Past Sponcers
+                </span></b>    
+            </div></div></div>
+        </center>
+
+<style>
+    .sp-img{
+        max-width: 60%;
+        padding-top:1%;
+        padding-bottom: 1.8%;
+    }
+    @media(max-width:420px){
+        .sp-img{
+        max-width: 80%;
+        max-height:80%;
+        padding-top:1%;
+
+        }
+        .im10{
+            height:18%;
+            width:100%;
+        }
+    }
+</style>
+
+<center>
+    <div class="sp-img container ">
+        <div class="w3-round-xlarge w3-border w3-row" style="padding-left:1%;padding-right:1%;">
+            <img class="w3-third im10" src="s2.jpg">
+            <img class="w3-third w3-border-blue w3-border im10" src="s4.jpg">
+            <img class="w3-third im10" src="s1.jpg">
+        </div>
+    </div>
+</center>
+
+<!--------------------------------------------------------------------------------------------------------------->
+
+<!--Footer------------------------------------------->
+    <style>
+        .foot_note{
+            font-size:14px;
+            padding-left: 20%;
+        }
+        @media(max-height:420px){
+            .foot_note{
+            font-size:20px;
+            padding-bottom: 100%;
+        }
+        }
+    </style>
+        <footer class="foot w3-container w3-padding w3-center w3-xlarge w3-display-bottommiddle" align="center">
+            <a href="https://www.facebook.com/ITSA.FrCRCE/" target="blank" title="Itsa Fb Page" >
+                <i class="fa fa-facebook-square w3-hover-opacity"></i></a>
+            <a href="https://www.instagram.com/itsa_frcrce/" target="blank" title="Itsa Instagram Page" >
+                <i class="fa fa-instagram w3-hover-opacity"></i></a>
+            <a href="mailto:itsa.frcrce@gmail.com" target="blank" title="Itsa Gmail Account" >
+                <i class="fa fa-envelope w3-hover-opacity"></i></a>
+            <a href="https://github.com/" target="blank" title="Itsa Code on Git" >
+                    <i class="fa fa-github w3-hover-opacity"></i></a>
+        </footer>
+        <footer class="foot_note" fontcolor="red">
+            Created and Maintained by ITSA Council.
+        </footer>
+        <pre></pre>
+<!-- --------------------------------------------------------->
+
+        <script>
+        function myFunction() {
+            var x = document.getElementById("demo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            }   
+            else { 
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) 
+        {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) 
+        {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) 
+        {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) 
+            {
+                x[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) 
+            {
+                dots[i].className = dots[i].className.replace(" w3-white", "");
+            }
+            x[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " w3-white";
+        }
+        var slideIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none"; 
+            }
+            slideIndex++;
+            if (slideIndex > x.length) {slideIndex = 1} 
+            x[slideIndex-1].style.display = "block"; 
+            setTimeout(carousel, 4000); //////////////////////////////////////////////Time/////////////////////////////
+            for (i = 0; i < dots.length; i++) 
+            {
+                dots[i].className = dots[i].className.replace(" w3-white", "");
+            }
+            dots[slideIndex-1].className += " w3-white";
+        }
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth' });
+    });
+});
+</script>
+
+    </body>
+</html>

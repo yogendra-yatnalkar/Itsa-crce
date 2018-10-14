@@ -1,0 +1,17 @@
+<?php /*
+    $uname = mysqli_real_escape_string($conn,"super_user");
+    $uname1 = mysqli_real_escape_string($conn,"universe");
+    echo "<br>".$uname."<br>".$uname1."<br><br>";
+
+    echo $p=password_hash("sudo_root_univ",PASSWORD_DEFAULT)."<br>";
+    echo $p."<br>";
+
+    echo $p1=password_hash("universe",PASSWORD_DEFAULT)."<br>";
+    echo $p1."<br>";
+
+    $sql="INSERT INTO users(uname,passwd) VALUES('$uname','$p');";
+    $sql1="INSERT INTO users(uname,passwd) VALUES('$uname1','$p1');";
+
+    mysqli_query($conn,$sql);
+    mysqli_query($conn,$sql1);
+*/?>
